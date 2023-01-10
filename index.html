@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminal.sexy ➡️ Windows Terminal</title>
+</head>
+
+<body class="p-6 text-text dark:text-white bg-base dark:bg-base-dark">
+  <div id="app" class="flex flex-col items-center gap-[16px]">
+    <h1 class="text-[28px] leading-[36px] font-semibold text-center">terminal.sexy ➡️ Windows Terminal converter</h1>
+    <label for="url">Paste a <a href="https://terminal.sexy" class="underline text-sky-600 dark:text-sky-400 visited:text-indigo-500">terminal.sexy</a> link below.</label>
+    <div id="content" class="w-5/6 xl:w-2/3 xl:items-center flex flex-col gap-[8px]">
+      <input type="text" name="url" id="urlfield"
+        class="px-2 py-1 xl:w-2/3 bg-fill dark:bg-fill-dark placeholder:text-neutral-400 placeholder:dark:text-neutral-500 border border-stroke dark:border-stroke-dark rounded"
+        pattern="(https?:\/\/|)terminal\.sexy\/#([a-zA-Z0-9_-]{72})" title="A valid terminal.sexy URL"
+        spellcheck="false" placeholder="https://terminal.sexy/#..." />
+      <button id="convertbutton"
+        class="w-fit p-1 px-3 self-center bg-fill dark:bg-fill-dark border border-stroke dark:border-stroke-dark rounded">Convert</button>
+      <textarea id="jsonfield"
+        class="h-[27rem] xl:w-2/3 font-mono leading-tight px-2 py-1 bg-fill dark:bg-fill-dark border border-stroke dark:border-stroke-dark rounded resize-none"
+        readonly></textarea>
+      <button id="copybutton"
+        class="w-fit p-1 px-3 self-center bg-fill dark:bg-fill-dark border border-stroke dark:border-stroke-dark rounded">Copy</button>
+    </div>
+    <p class="self-center">Add this to the <span class="p-1 bg-fill dark:bg-fill-dark font-mono rounded">schemes</span>
+      array in your Terminal config.json.</p>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
